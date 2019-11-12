@@ -7,12 +7,12 @@ This repository contains a toy dataset for use with testing and building Machine
 | ---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
 | 100001 | 900001 | 1 | 2 | 130 | 15 | 37.0 | 1.2 | 101 |
 
-The fields are described [below](). It is important to note that this is a toy dataset with no actual data, and is intended to be a practice tool *only*. Several assumptions are built into this dataset:
+The fields are described [below](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#data-fields). It is important to note that this is a toy dataset with no actual data, and is intended to be a practice tool *only*. Several assumptions are built into this dataset:
 
 * The data has been divided into "sepsis" and "not sepsis", which are independent from each other.
 * All values have been randomly generated, with the following exceptions:
   * There are equal numbers of data values with the "sepsis" and "not sepsis" flag.
-  * [Temperature is linked to heart rate]() in an effort to create a more realistic simulated dataset.
+  * [Temperature is linked to heart rate](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#body_temp) in an effort to create a more realistic simulated dataset.
   * For data values that are linked to the "sepsis" flag, the corresponding clinical values have been shifted to artifically ensure that they match expected clinical presentation. Details on how this was done are available in each section.
 
 ### Data Fields
@@ -63,7 +63,7 @@ This field is a randomly generated integer ranging from 1-60, with the following
 #### Body_Temp
 This field is a randomly generated float ranging from 34.0 to 40.1
 
-It is tied to heart rate, and subject to the following limitations:
+It is [tied to heart rate](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#heart_rate-bpm), and subject to the following limitations:
 
         if sepsis_flag == True:
           # randomly generate a float between 0 and 1.0
@@ -118,7 +118,7 @@ This field is a randomly generated integer ranging from 60 to 210, with the foll
         else:
           return random.randrange(60, 181)
 
-* Note that this is tied to the [Body_Temp value]()
+* Note that this is tied to the [Body_Temp value](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#body_temp)
 * Sources: [Afshar et al 2019](https://www.ncbi.nlm.nih.gov/pubmed/31306176), Davies and Maconochie 2009](https://www.ncbi.nlm.nih.gov/pubmed/?term=19700579), [Kendra Houston 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4681323/)
 
 
