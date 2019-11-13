@@ -3,9 +3,9 @@
 ### Overview
 This repository contains a toy dataset for use with testing and building Machine Learning (ML) models that predict clinical outcomes from patient Electronic Health Records (EHR) data. The dataset is free to use an contains no actual patient information. Several publications were referenced in an effort to data points that somewhat resembled actual clinical patient data. The data is formatted as a flatfile CSV format, and divided into "sepsis" and "non-sepsis" patients. An example is shown here:
 
-| Patient_ID    | Institution_ID    | Gender  | Race | BP-Systolic | Respiratory_Rate | Body_Temp | Creatinine | Heart_Rate-BPM |  
-| ---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-| 100001 | 900001 | 1 | 2 | 130 | 15 | 37.0 | 1.2 | 101 |
+| Patient_ID    | Institution_ID    | Gender  | Race | BP-Systolic | Respiratory_Rate | Body_Temp | Creatinine | Heart_Rate-BPM |  GCM | Sepsis Flag |
+| ---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+| 100001 | 900001 | 1 | 2 | 130 | 15 | 37.0 | 1.2 | 101 | 15 | False |
 
 The fields are described [below](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#data-fields). It is important to note that this is a toy dataset with no actual data, and is intended to be a practice tool *only*. Several assumptions are built into this dataset:
 
@@ -121,5 +121,9 @@ This field is a randomly generated integer ranging from 60 to 210, with the foll
 * Note that this is tied to the [Body_Temp value](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#body_temp)
 * Sources: [Afshar et al 2019](https://www.ncbi.nlm.nih.gov/pubmed/31306176), Davies and Maconochie 2009](https://www.ncbi.nlm.nih.gov/pubmed/?term=19700579), [Kendra Houston 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4681323/)
 
+#### GCM
+This field is always 15 for non sepsis patients, and an integer ranging from 7 to 15 for Sepsis patients
 
+#### Sepsis Flag
+This field is True for a sepsis patient, and False for a non-sepsis patient.
 
