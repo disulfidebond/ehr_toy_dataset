@@ -9,7 +9,7 @@ for i in range(0, 1000):
     # create a random integer to adjust the admission date
     dateRandomizer = random.randrange(0,30)
     # create a random integer to adjust the discharge time
-    dateTimeRandomizer = random.randrange(0,12)
+    dateTimeRandomizer = random.randrange(1,13)
     # create a randomized timestamp using the dateRandomizer variable
     rDateAdmission = datetime.fromtimestamp((datetime.now() + timedelta(days=dateRandomizer)).timestamp())
     rDateAdmission_timestampStr = rDateAdmission.strftime('%H%M%S-%m%d%Y')
