@@ -3,9 +3,9 @@
 ### Overview
 This repository contains a toy dataset for use with testing and building Machine Learning (ML) models that predict clinical outcomes from patient Electronic Health Records (EHR) data. The dataset is free to use an contains no actual patient information. Several publications were referenced in an effort to data points that somewhat resembled actual clinical patient data. The data is formatted as a flatfile CSV format, and divided into "sepsis" and "non-sepsis" patients. An example is shown here:
 
-| Patient_ID    | Institution_ID    | Gender  | Race | BP-Systolic | Respiratory_Rate | Body_Temp | Creatinine | Heart_Rate-BPM |  GCM | Sepsis Flag |
-| ---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
-| 100001 | 900001 | 1 | 2 | 130 | 15 | 37.0 | 1.2 | 101 | 15 | False |
+| Patient_ID    | Institution_ID    | Gender  | Race | DateTime_Admission | DateTime_Discharged | BP-Systolic | Respiratory_Rate | Body_Temp | Creatinine | Heart_Rate-BPM |  GCM | Sepsis Flag |
+| ---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+| 100001 | 900001 | 1 | 2 | 145337-12102019 | 215337-12102019 | 130 | 15 | 37.0 | 1.2 | 101 | 15 | False |
 
 The fields are described [below](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#data-fields). It is important to note that this is a toy dataset with no actual data, and is intended to be a practice tool *only*. Several assumptions are built into this dataset:
 
@@ -29,6 +29,18 @@ This field is a randomly generated integer, where 0 == male, and 1 == female.
 
 #### Race
 This field is a randomly generated integer, where 1 == "white", 2 == "hispanic", 3 == "black", 4 == "Asian"
+
+#### DateTime_Admission
+This field adds a randomized value that is between 0 and 30 days from the current date/time, and uses that as the date and time of admission. The value is a string in the format 24hourtime-date. 
+
+        # Example: 9:53 pm and 37 seconds on December 10, 2019
+        215337-12102019
+
+#### DateTime_Discharged
+This field adds a randomized value to the randomized *DateTime_Admission* value, and creates a discharge time that is between 1 and 12 hours after admission. The value is a string in the format 24hourtime-date. 
+
+        # Example: 9:53 pm and 37 seconds on December 10, 2019
+        215337-12102019
 
 #### BP-Systolic
 This field is a randomly generated integer ranging from 80-180, with the following limitations:
