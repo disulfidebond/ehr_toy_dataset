@@ -122,7 +122,8 @@ This field is a randomly generated integer ranging from 60 to 210, with the foll
 * Sources: [Afshar et al 2019](https://www.ncbi.nlm.nih.gov/pubmed/31306176), Davies and Maconochie 2009](https://www.ncbi.nlm.nih.gov/pubmed/?term=19700579), [Kendra Houston 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4681323/)
 
 #### GCM
-This field is always 15 for non sepsis patients, and an integer ranging from 7 to 15 for Sepsis patients
+This field is always 15 for non sepsis patients, and an integer ranging from 7 to 15 for sepsis patients
+* Sources: [CDC](https://www.cdc.gov/masstrauma/resources/gcs.pdf)
 
 #### Sepsis Flag
 This field is True for a sepsis patient, and False for a non-sepsis patient.
