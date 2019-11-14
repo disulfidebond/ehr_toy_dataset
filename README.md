@@ -1,7 +1,7 @@
 ## README
 
 ### Overview
-This repository contains a toy dataset for use with testing and building Machine Learning (ML) models that predict clinical outcomes from patient Electronic Health Records (EHR) data. The dataset is free to use an contains no actual patient information. Several publications were referenced in an effort to data points that somewhat resembled actual clinical patient data. The data is formatted as a flatfile CSV format, and divided into "sepsis" and "non-sepsis" patients. An example is shown here:
+This repository contains a toy dataset for use with testing and building Machine Learning (ML) models that predict clinical outcomes from patient Electronic Health Records (EHR) data. The dataset is free to use and contains no actual patient information. Several publications were referenced in an effort to data points that somewhat resembled actual clinical patient data. The data is formatted as a flatfile CSV format, and divided into "sepsis" and "non-sepsis" patients. An example is shown here:
 
 | Patient_ID    | Institution_ID    | Gender  | Race | BP-Systolic | Respiratory_Rate | Body_Temp | Creatinine | Heart_Rate-BPM |  GCM | Sepsis Flag |
 | ---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
