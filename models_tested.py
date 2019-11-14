@@ -48,6 +48,7 @@ from sklearn.preprocessing import MinMaxScaler
 num_pipeline = Pipeline([('std_scaler', MinMaxScaler())])
 pdata_x = num_pipeline.fit_transform(X_train)
 pdata_y = y_train
+pipeline.fit(pdata_x, pdata_y)
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.cluster import KMeans
