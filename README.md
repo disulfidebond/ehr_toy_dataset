@@ -120,7 +120,7 @@ This field is a randomly generated integer ranging from 60 to 210, with the foll
           return random.randrange(60, 181)
 
 * Note that this is tied to the [Body_Temp value](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#body_temp)
-* Sources: [Afshar et al 2019](https://www.ncbi.nlm.nih.gov/pubmed/31306176), Davies and Maconochie 2009](https://www.ncbi.nlm.nih.gov/pubmed/?term=19700579), [Kendra Houston 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4681323/)
+* Sources: [Afshar et al 2019](https://www.ncbi.nlm.nih.gov/pubmed/31306176),[Davies and Maconochie 2009](https://www.ncbi.nlm.nih.gov/pubmed/?term=19700579), [Kendra Houston 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4681323/)
 
 #### GCM
 This field is always 15 for non sepsis patients, and an integer ranging from 7 to 15 for sepsis patients
