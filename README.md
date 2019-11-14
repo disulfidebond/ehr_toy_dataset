@@ -13,6 +13,7 @@ The fields are described [below](https://github.com/disulfidebond/ehr_toy_datase
 * All values have been randomly generated, with the following exceptions:
   * There are equal numbers of data values with the "sepsis" and "not sepsis" flag.
   * [Temperature is linked to heart rate](https://github.com/disulfidebond/ehr_toy_dataset/blob/master/README.md#body_temp) in an effort to create a more realistic simulated dataset.
+  * The [Glasgow Coma Score (GCM)](https://www.cdc.gov/masstrauma/resources/gcs.pdf) is alwasy 15 for non-sepsis patints, and an integer less than 15 for sepsis patients.
   * For data values that are linked to the "sepsis" flag, the corresponding clinical values have been shifted to artifically ensure that they match expected clinical presentation. Details on how this was done are available in each section.
 
 ### Data Fields
