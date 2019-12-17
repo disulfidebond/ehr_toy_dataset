@@ -72,4 +72,45 @@ def randBP(sepsisBool):
         randomizedBP = random.randrange(80, 101)
         return randomizedBP
 
-    
+
+def convertSparse(kw, val):
+    lookupDict = {'temp' : [37.0,38.0], 'GCM' : 15, 'BPM': 140, 'RR': [4, 21], 'cre': 4.0, 'sysBP': 95}
+    # temp: [lt,gt], GCM: lt, BPM: gt, RR: [lt,gt], cre: gt, sysBP: gt
+    # 1 == SepsisTrue, 0 == SepsisFalse
+    try:
+        lookupKW = lookupDict[kw]
+        if kw == 'temp':
+            if val < lookupKW[0] or val > lookupKW[1]:
+                return 1
+            else:
+                return 0
+        if kw == 'GCM':
+            if val < lookupKW:
+                return 1
+            else:
+                return 0
+        if kw == 'BPM':
+            if val > lookupKW:
+                return 1
+            else:
+                return 0
+        if kw == 'RR':
+            if val < lookupKW[0] or val > lookupKW[1]:
+                return 1
+            else:
+                return 0
+        if kw == 'cre':
+            if val > lookupKW:
+                return 1
+            else:
+                return 0
+        if kw == 'sysBP':
+            if val > lookupKW:
+                return 1
+            else:
+                return 0
+        print('Error, kw not found')
+        return None
+    except KeyError:
+        print('Error, check kw val')
+        return None
