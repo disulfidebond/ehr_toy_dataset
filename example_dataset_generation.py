@@ -21,7 +21,15 @@ for i in range(0, 1000):
     raceRand = random.randrange(1,5)
     randomizedHeartRate = randBPM(True)
     heartRateBPM, randomizedTemp = randTemp(randomizedHeartRate, True)
-    l = [patient_ID, institution_ID, genderRand, raceRand, rDateAdmission_timestampStr, rDateDischarge_timestampStr, randBP(True), randRespRate(True), randomizedTemp, randCre(True), heartRateBPM, randGCM(True), "True"]
+    # def convertSparse(kw, val):
+    randBP_val = randBP(True)
+    randRespRate_val = randRespRate(True)
+    randCre_val = randCre(True)
+    randGCS_val = randGCS(True)
+    l = [patient_ID, institution_ID, genderRand, raceRand, rDateAdmission_timestampStr, rDateDischarge_timestampStr, convertSparse(randBP_val), convertSparse(randRespRate_val), convertSparse(randomizedTemp), convertSparse(randCre_val), convertSparse(heartRateBPM), convertSparse(randGCS_val), "True"]
+    if list(filter(lambda x: x == None, l)):
+        print('Error! Exiting...')
+        break
     l_castString = [str(x) for x in l]
     s = ','.join(l_castString)
     with open('toy_dataset_sepsis-withTimestamp.csv', 'a') as fWrite:
