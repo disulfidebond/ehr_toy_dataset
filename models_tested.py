@@ -86,3 +86,4 @@ from sklearn.mixture import GaussianMixture
 gm = GaussianMixture(n_components=4, n_init=10)
 gm.fit(pdata_x)
 
+pipeline.fit(pdata_x, pdata_y)
